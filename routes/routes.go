@@ -6,5 +6,8 @@ import (
 )
 
 func Init(e *echo.Echo) {
-	e.POST("/create", tasks.Create)
+	e.GET("/tasks", tasks.Get)
+	e.POST("/tasks/create", tasks.Create)
+	e.PUT("/tasks/done/:id", tasks.Update)
+	e.DELETE("/tasks/delete/all", tasks.DeleteAll)
 }
