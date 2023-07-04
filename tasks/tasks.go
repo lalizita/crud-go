@@ -66,7 +66,7 @@ func Update(e echo.Context) error {
 	if err != nil {
 		return e.JSON(http.StatusInternalServerError, "error reading file")
 	}
-	if id >= len(t) {
+	if id > len(t) {
 		return e.JSON(http.StatusNotFound, "task not found")
 	}
 
